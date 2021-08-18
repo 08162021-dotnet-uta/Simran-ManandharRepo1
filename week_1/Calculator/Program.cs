@@ -51,9 +51,14 @@ namespace Calculator
     {
       // output stuff
       Console.Write("Answers:\n");
-      for (int i = 0; i < list.Length; i++)
+      // for (int i = 0; i < list.Length; i++)
+      // {
+      //   Console.Write(list[i] + "\n");
+      // }
+
+      foreach (var item in list)
       {
-        Console.Write(list[i] + "\n");
+        Console.Write(item + "\n");
       }
     }
 
