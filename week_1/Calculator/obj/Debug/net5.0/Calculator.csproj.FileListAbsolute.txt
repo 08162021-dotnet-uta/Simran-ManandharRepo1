@@ -1,0 +1,15 @@
+/Users/Contemplative/Documents/Revature/training_code/week_1/Calculator/bin/Debug/net5.0/Calculator.deps.json
+/Users/Contemplative/Documents/Revature/training_code/week_1/Calculator/bin/Debug/net5.0/Calculator.runtimeconfig.json
+/Users/Contemplative/Documents/Revature/training_code/week_1/Calculator/bin/Debug/net5.0/Calculator.runtimeconfig.dev.json
+/Users/Contemplative/Documents/Revature/training_code/week_1/Calculator/bin/Debug/net5.0/Calculator.dll
+/Users/Contemplative/Documents/Revature/training_code/week_1/Calculator/bin/Debug/net5.0/ref/Calculator.dll
+/Users/Contemplative/Documents/Revature/training_code/week_1/Calculator/bin/Debug/net5.0/Calculator.pdb
+/Users/Contemplative/Documents/Revature/training_code/week_1/Calculator/obj/Debug/net5.0/Calculator.csproj.AssemblyReference.cache
+/Users/Contemplative/Documents/Revature/training_code/week_1/Calculator/obj/Debug/net5.0/Calculator.GeneratedMSBuildEditorConfig.editorconfig
+/Users/Contemplative/Documents/Revature/training_code/week_1/Calculator/obj/Debug/net5.0/Calculator.AssemblyInfoInputs.cache
+/Users/Contemplative/Documents/Revature/training_code/week_1/Calculator/obj/Debug/net5.0/Calculator.AssemblyInfo.cs
+/Users/Contemplative/Documents/Revature/training_code/week_1/Calculator/obj/Debug/net5.0/Calculator.csproj.CoreCompileInputs.cache
+/Users/Contemplative/Documents/Revature/training_code/week_1/Calculator/obj/Debug/net5.0/Calculator.dll
+/Users/Contemplative/Documents/Revature/training_code/week_1/Calculator/obj/Debug/net5.0/ref/Calculator.dll
+/Users/Contemplative/Documents/Revature/training_code/week_1/Calculator/obj/Debug/net5.0/Calculator.pdb
+/Users/Contemplative/Documents/Revature/training_code/week_1/Calculator/obj/Debug/net5.0/Calculator.genruntimeconfig.cache
