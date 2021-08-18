@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "/Users/Contemplative/.dotnet/store/|arch|/|tfm|",
+      "/Users/Contemplative/.nuget/packages"
+    ]
+  }
+}
