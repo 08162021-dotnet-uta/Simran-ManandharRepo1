@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net5.0": {}
+    "net5.0": {
+      "Project0.StoreApplication.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/Project0.StoreApplication.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Project0.StoreApplication.Domain.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Project0.StoreApplication.Domain/1.0.0": {
+      "type": "project",
+      "path": "../Project0.StoreApplication.Domain/Project0.StoreApplication.Domain.csproj",
+      "msbuildProject": "../Project0.StoreApplication.Domain/Project0.StoreApplication.Domain.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net5.0": []
+    "net5.0": [
+      "Project0.StoreApplication.Domain >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "/Users/Contemplative/.nuget/packages/": {}
@@ -31,7 +50,11 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "/Users/Contemplative/Documents/Revature/training_code/projects/project_0/Project0.StoreApplication.Domain/Project0.StoreApplication.Domain.csproj": {
+              "projectPath": "/Users/Contemplative/Documents/Revature/training_code/projects/project_0/Project0.StoreApplication.Domain/Project0.StoreApplication.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

@@ -1,11 +1,49 @@
 {
   "version": 3,
   "targets": {
-    "net5.0": {}
+    "net5.0": {
+      "Project0.StoreApplication.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/Project0.StoreApplication.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Project0.StoreApplication.Domain.dll": {}
+        }
+      },
+      "Project0.StoreApplication.Storage/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Project0.StoreApplication.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Project0.StoreApplication.Storage.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Project0.StoreApplication.Storage.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Project0.StoreApplication.Domain/1.0.0": {
+      "type": "project",
+      "path": "../Project0.StoreApplication.Domain/Project0.StoreApplication.Domain.csproj",
+      "msbuildProject": "../Project0.StoreApplication.Domain/Project0.StoreApplication.Domain.csproj"
+    },
+    "Project0.StoreApplication.Storage/1.0.0": {
+      "type": "project",
+      "path": "../Project0.StoreApplication.Storage/Project0.StoreApplication.Storage.csproj",
+      "msbuildProject": "../Project0.StoreApplication.Storage/Project0.StoreApplication.Storage.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net5.0": []
+    "net5.0": [
+      "Project0.StoreApplication.Domain >= 1.0.0",
+      "Project0.StoreApplication.Storage >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "/Users/Contemplative/.nuget/packages/": {}
@@ -13,11 +51,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/Contemplative/Documents/Revature/training_code/projects/Project0.StoreApplication.Client/Project0.StoreApplication.Client.csproj",
+      "projectUniqueName": "/Users/Contemplative/Documents/Revature/training_code/projects/project_0/Project0.StoreApplication.Client/Project0.StoreApplication.Client.csproj",
       "projectName": "Project0.StoreApplication.Client",
-      "projectPath": "/Users/Contemplative/Documents/Revature/training_code/projects/Project0.StoreApplication.Client/Project0.StoreApplication.Client.csproj",
+      "projectPath": "/Users/Contemplative/Documents/Revature/training_code/projects/project_0/Project0.StoreApplication.Client/Project0.StoreApplication.Client.csproj",
       "packagesPath": "/Users/Contemplative/.nuget/packages/",
-      "outputPath": "/Users/Contemplative/Documents/Revature/training_code/projects/Project0.StoreApplication.Client/obj/",
+      "outputPath": "/Users/Contemplative/Documents/Revature/training_code/projects/project_0/Project0.StoreApplication.Client/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/Contemplative/.nuget/NuGet/NuGet.Config"
@@ -31,7 +69,14 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "/Users/Contemplative/Documents/Revature/training_code/projects/project_0/Project0.StoreApplication.Domain/Project0.StoreApplication.Domain.csproj": {
+              "projectPath": "/Users/Contemplative/Documents/Revature/training_code/projects/project_0/Project0.StoreApplication.Domain/Project0.StoreApplication.Domain.csproj"
+            },
+            "/Users/Contemplative/Documents/Revature/training_code/projects/project_0/Project0.StoreApplication.Storage/Project0.StoreApplication.Storage.csproj": {
+              "projectPath": "/Users/Contemplative/Documents/Revature/training_code/projects/project_0/Project0.StoreApplication.Storage/Project0.StoreApplication.Storage.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
