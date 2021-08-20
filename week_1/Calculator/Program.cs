@@ -6,17 +6,22 @@ namespace Calculator
   {
     static void Main(string[] args)
     {
-      var input1 = int.Parse(Console.ReadLine()); //123a, 123 // type inference, parsing
-      var input2 = int.Parse(Console.ReadLine());
 
-      // compute stuff
-      int result1 = Add(input1, input2);
-      int result2 = Subtract(input1, input2);
-      int result3 = Multiply(input1, input2);
-      int result4 = Divide(input1, input2);
+      //input stuff
+      // int input1, input2;
 
-      // output stuff
-      Print(result1, result2, result3, result4);
+      if (Input(out int input1, out int input2))
+      {
+        // compute stuff
+        int result1 = Add(input1, input2);
+        int result2 = Subtract(input1, input2);
+        int result3 = Multiply(input1, input2);
+        int result4 = Divide(input1, input2);
+
+        // output stuff
+        Print(result1, result2, result3, result4);
+      }
+
     }
 
     static int Add(int input1, int input2)
@@ -59,6 +64,18 @@ namespace Calculator
       foreach (var item in list)
       {
         Console.Write(item + "\n");
+      }
+    }
+
+    static bool Input(out int l1, out int l2)
+    {
+      if (int.TryParse(Console.ReadLine(), out l1) & int.TryParse(Console.ReadLine(), out l2))
+      {
+        return true;
+      }
+      else
+      {
+        return false;
       }
     }
 
