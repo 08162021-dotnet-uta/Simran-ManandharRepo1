@@ -110,7 +110,8 @@ namespace StringManipulationChallenge
     {
       // throw new NotImplementedException("ConcatNames method not implemented.");
       // fName += lName;
-      return fName + " " + lName;
+      return String.Concat(fName, " ", lName);
+
     }
   }//end of program
 }
