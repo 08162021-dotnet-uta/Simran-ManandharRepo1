@@ -1,7 +1,9 @@
 ﻿using System;
 using Project0.StoreApplication.Domain.Abstracts;
+using System.Collections.Generic;
 using Project0.StoreApplication.Domain.Models;
 using Project0.StoreApplication.Storage.Repositories;
+using Serilog;
 
 namespace Project0.StoreApplication.Client
 {
@@ -12,6 +14,7 @@ namespace Project0.StoreApplication.Client
   {
     static void Main(string[] args)
     {
+      Log.Logger = new LoggerConfiguration().WriteTo.Console().CreateLogger();
       var program = new Program();
 
       program.CaptureOutput();
@@ -19,14 +22,16 @@ namespace Project0.StoreApplication.Client
 
     private List<Store> AllTheStores()
     {
-      var stores = new List<string>();
+      var stores = new List<Store>();
 
       return stores;
     }
 
     private void OutputStores()
     {
-      foreach (var store in AllTheStores())
+      Log.Information("in output stores");
+      var storeRepository = new StoreRepository();
+      foreach (var store in storeRepository.Stores)
       {
         Console.WriteLine(store);
       }
@@ -34,6 +39,8 @@ namespace Project0.StoreApplication.Client
 
     private int CaptureInput()
     {
+
+      Log.Information("in input");
       OutputStores();
 
       Console.WriteLine("Pick a Store:");
@@ -45,7 +52,8 @@ namespace Project0.StoreApplication.Client
 
     private void CaptureOutput()
     {
-      Console.WriteLine("You have selected: " + AllTheStores()[CaptureInput()]);
+      var storeRepository = new StoreRepository();
+      Console.WriteLine("You have selected: " + storeRepository.Stores[CaptureInput()]);
     }
   }
 }
