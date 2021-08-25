@@ -1,40 +1,51 @@
 ﻿using System;
-using System.Collections.Generic;
+using Project0.StoreApplication.Domain.Abstracts;
 using Project0.StoreApplication.Domain.Models;
 using Project0.StoreApplication.Storage.Repositories;
 
 namespace Project0.StoreApplication.Client
 {
+  /// <summary>
+  /// Program Class: Defines the program class
+  /// </summary>
   class Program
   {
     static void Main(string[] args)
     {
-      var p = new Program();
-      p.PrintAllStoreLocations();
+      var program = new Program();
 
-      System.Console.WriteLine(p.SelectAStore());
+      program.CaptureOutput();
     }
 
-    void PrintAllStoreLocations()
+    private List<Store> AllTheStores()
     {
-      var storeRepository = new StoreRepository();
+      var stores = new List<string>();
 
+      return stores;
+    }
 
-      foreach (var store in storeRepository.Stores)
+    private void OutputStores()
+    {
+      foreach (var store in AllTheStores())
       {
-        System.Console.WriteLine(store);
+        Console.WriteLine(store);
       }
     }
 
-    Store SelectAStore()
+    private int CaptureInput()
     {
-      var sr = new StoreRepository().Stores;
+      OutputStores();
 
-      Console.WriteLine("Select a Store:");
+      Console.WriteLine("Pick a Store:");
 
-      var option = int.Parse(Console.ReadLine());
-      var store = sr[option - 1];
-      return store;
+      int input = int.Parse(Console.ReadLine());
+
+      return input;
+    }
+
+    private void CaptureOutput()
+    {
+      Console.WriteLine("You have selected: " + AllTheStores()[CaptureInput()]);
     }
   }
 }
