@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/Contemplative/Documents/Revature/training_code/projects/project_0/Project0.StoreApplication.Storage/Project0.StoreApplication.Storage.csproj": {}
+    "/Users/Contemplative/Documents/Revature/simran_code/projects/project_0/Project0.StoreApplication.Storage/Project0.StoreApplication.Storage.csproj": {}
   },
   "projects": {
-    "/Users/Contemplative/Documents/Revature/training_code/projects/project_0/Project0.StoreApplication.Domain/Project0.StoreApplication.Domain.csproj": {
+    "/Users/Contemplative/Documents/Revature/simran_code/projects/project_0/Project0.StoreApplication.Domain/Project0.StoreApplication.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/Contemplative/Documents/Revature/training_code/projects/project_0/Project0.StoreApplication.Domain/Project0.StoreApplication.Domain.csproj",
+        "projectUniqueName": "/Users/Contemplative/Documents/Revature/simran_code/projects/project_0/Project0.StoreApplication.Domain/Project0.StoreApplication.Domain.csproj",
         "projectName": "Project0.StoreApplication.Domain",
-        "projectPath": "/Users/Contemplative/Documents/Revature/training_code/projects/project_0/Project0.StoreApplication.Domain/Project0.StoreApplication.Domain.csproj",
+        "projectPath": "/Users/Contemplative/Documents/Revature/simran_code/projects/project_0/Project0.StoreApplication.Domain/Project0.StoreApplication.Domain.csproj",
         "packagesPath": "/Users/Contemplative/.nuget/packages/",
-        "outputPath": "/Users/Contemplative/Documents/Revature/training_code/projects/project_0/Project0.StoreApplication.Domain/obj/",
+        "outputPath": "/Users/Contemplative/Documents/Revature/simran_code/projects/project_0/Project0.StoreApplication.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/Contemplative/.nuget/NuGet/NuGet.Config"
@@ -56,14 +56,14 @@
         }
       }
     },
-    "/Users/Contemplative/Documents/Revature/training_code/projects/project_0/Project0.StoreApplication.Storage/Project0.StoreApplication.Storage.csproj": {
+    "/Users/Contemplative/Documents/Revature/simran_code/projects/project_0/Project0.StoreApplication.Storage/Project0.StoreApplication.Storage.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/Contemplative/Documents/Revature/training_code/projects/project_0/Project0.StoreApplication.Storage/Project0.StoreApplication.Storage.csproj",
+        "projectUniqueName": "/Users/Contemplative/Documents/Revature/simran_code/projects/project_0/Project0.StoreApplication.Storage/Project0.StoreApplication.Storage.csproj",
         "projectName": "Project0.StoreApplication.Storage",
-        "projectPath": "/Users/Contemplative/Documents/Revature/training_code/projects/project_0/Project0.StoreApplication.Storage/Project0.StoreApplication.Storage.csproj",
+        "projectPath": "/Users/Contemplative/Documents/Revature/simran_code/projects/project_0/Project0.StoreApplication.Storage/Project0.StoreApplication.Storage.csproj",
         "packagesPath": "/Users/Contemplative/.nuget/packages/",
-        "outputPath": "/Users/Contemplative/Documents/Revature/training_code/projects/project_0/Project0.StoreApplication.Storage/obj/",
+        "outputPath": "/Users/Contemplative/Documents/Revature/simran_code/projects/project_0/Project0.StoreApplication.Storage/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/Contemplative/.nuget/NuGet/NuGet.Config"
@@ -78,8 +78,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "/Users/Contemplative/Documents/Revature/training_code/projects/project_0/Project0.StoreApplication.Domain/Project0.StoreApplication.Domain.csproj": {
-                "projectPath": "/Users/Contemplative/Documents/Revature/training_code/projects/project_0/Project0.StoreApplication.Domain/Project0.StoreApplication.Domain.csproj"
+              "/Users/Contemplative/Documents/Revature/simran_code/projects/project_0/Project0.StoreApplication.Domain/Project0.StoreApplication.Domain.csproj": {
+                "projectPath": "/Users/Contemplative/Documents/Revature/simran_code/projects/project_0/Project0.StoreApplication.Domain/Project0.StoreApplication.Domain.csproj"
               }
             }
           }

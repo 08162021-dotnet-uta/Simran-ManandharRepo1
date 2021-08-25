@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "So7JP2/Mb0RHvT3QIBO13EPVEdnYyf/O76mkNjMmfMRt0HjpDB7DPNjYVEM1fvQvtArGtNgFwzzca0dfLbwnkA==",
+  "dgSpecHash": "COZB/wQs7g1BMLYrt3xqr8ilugonKMfeQ9za5QP/4QSd12sHNOZ4SxjDD9b4a0Lm64+OjsaXMd2Gz3tOdwAxCA==",
   "success": true,
-  "projectFilePath": "/Users/Contemplative/Documents/Revature/training_code/projects/project_0/Project0.StoreApplication.Client/Project0.StoreApplication.Client.csproj",
+  "projectFilePath": "/Users/Contemplative/Documents/Revature/simran_code/projects/project_0/Project0.StoreApplication.Client/Project0.StoreApplication.Client.csproj",
   "expectedPackageFiles": [
     "/Users/Contemplative/.nuget/packages/serilog/2.10.0/serilog.2.10.0.nupkg.sha512",
     "/Users/Contemplative/.nuget/packages/serilog.sinks.console/4.0.0/serilog.sinks.console.4.0.0.nupkg.sha512",
