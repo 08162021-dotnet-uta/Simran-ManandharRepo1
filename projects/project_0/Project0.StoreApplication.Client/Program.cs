@@ -47,7 +47,7 @@ namespace Project0.StoreApplication.Client
 
       int input = int.Parse(Console.ReadLine());
 
-      return input;
+      return input-1;
     }
 
     private void CaptureOutput()
