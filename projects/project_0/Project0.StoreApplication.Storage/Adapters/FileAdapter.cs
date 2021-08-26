@@ -4,7 +4,7 @@ namespace Project0.StoreApplication.Storage.Adapters
   {
     public void ReadFromFile()
     {
-      var path = "~/revature/simran_code/data/project_0.xml";
+      var path = @"~/revature/simran_code/data/project_0.xml";
 
       var file = new StreamReader(path);
 
@@ -19,7 +19,7 @@ namespace Project0.StoreApplication.Storage.Adapters
 
     public void WriteToFile(List<Store> stores)
     {
-      var path = "~/revature/simran_code/data/project_0.xml";
+      var path = @"~/revature/simran_code/data/project_0.xml";
 
       var file = new StreamWriter(path);
 
