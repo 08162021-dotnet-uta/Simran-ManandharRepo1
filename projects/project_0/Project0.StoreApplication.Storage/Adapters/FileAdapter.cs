@@ -1,10 +1,15 @@
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using Project0.StoreApplication.Domain.Abstracts;
+using System.IO;
+
 namespace Project0.StoreApplication.Storage.Adapters
 {
-  public class Adapters
-  {
-    public void ReadFromFile()
+  public class FileAdapter
     {
-      var path = @"~/revature/simran_code/data/project_0.xml";
+    public List<Store> ReadFromFile()
+    {
+      var path = @"/Users/Contemplative/Documents/Revature/simran_code/data/project_0.xml";
 
       var file = new StreamReader(path);
 
@@ -19,7 +24,7 @@ namespace Project0.StoreApplication.Storage.Adapters
 
     public void WriteToFile(List<Store> stores)
     {
-      var path = @"~/revature/simran_code/data/project_0.xml";
+      var path = @"/Users/Contemplative/Documents/Revature/simran_code/data/project_0.xml";
 
       var file = new StreamWriter(path);
 
