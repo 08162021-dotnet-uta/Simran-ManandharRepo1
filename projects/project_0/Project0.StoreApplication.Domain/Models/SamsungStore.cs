@@ -2,11 +2,11 @@ using Project0.StoreApplication.Domain.Abstracts;
 
 namespace Project0.StoreApplication.Domain.Models
 {
-  public class Makeup : Store
+  public class SamsungStore : Store
   {
-    public Makeup()
+    public SamsungStore()
     {
-      Name = "Makeup Store";
+      Name = "Samsung Store";
     }
   }
 }
