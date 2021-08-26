@@ -15,24 +15,17 @@ namespace Project0.StoreApplication.Storage.Repositories
 
       var fileAdapter = new FileAdapter();
 
-      fileAdapter.WriteToFile(new List<Store>()
+      if(fileAdapter.ReadFromFile() == null)
+      {
+        fileAdapter.WriteToFile(new List<Store>()
       {
         new Makeup(), //sores.Add(new Store());
         new Makeup(),
         new Makeup()
       });
+      }
       
-      // if(fileAdapter.ReadFromFile() == null)
-      // {
-      //   fileAdapter.WriteToFile(new List<Store>()
-      // {
-      //   new Makeup(), //sores.Add(new Store());
-      //   new Makeup(),
-      //   new Makeup()
-      // });
-      // }
-      
-      // Stores = fileAdapter.ReadFromFile();
+      Stores = fileAdapter.ReadFromFile();
     }
 
   }
