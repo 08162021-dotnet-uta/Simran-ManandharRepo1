@@ -3,7 +3,8 @@ using Project0.StoreApplication.Domain.Models;
 
 namespace Project0.StoreApplication.Domain.Abstracts
 {
-  [XmlInclude(typeof(Makeup))]
+  [XmlInclude(typeof(AppleStore))]
+  [XmlInclude(typeof(SamsungStore))]
 
   public abstract class Store
   {
