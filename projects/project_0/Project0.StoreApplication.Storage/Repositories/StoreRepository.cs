@@ -8,6 +8,7 @@ namespace Project0.StoreApplication.Storage.Repositories
 {
   public class StoreRepository
   {
+    private const string _path = @"/Users/Contemplative/Documents/Revature/simran_code/data/stores.xml"
     public List<Store> Stores { get; }
 
     public StoreRepository()
@@ -15,7 +16,7 @@ namespace Project0.StoreApplication.Storage.Repositories
 
       var fileAdapter = new FileAdapter();
 
-      // if(fileAdapter.ReadFromFile() == null)
+      // if(fileAdapter.ReadFromFile<Store>(_path) == null)
       // {
       //   fileAdapter.WriteToFile(new List<Store>()
       // {
@@ -24,7 +25,7 @@ namespace Project0.StoreApplication.Storage.Repositories
       // });
       // }
       
-      Stores = fileAdapter.ReadFromFile();
+      Stores = fileAdapter.ReadFromFile<_path>();
     }
 
   }
