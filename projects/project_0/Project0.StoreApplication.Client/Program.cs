@@ -13,10 +13,12 @@ namespace Project0.StoreApplication.Client
   class Program
   {
 
-    private readonly StoreRepository _storeRepository = new StoreRepository();
+    private readonly StoreRepository _storeRepository = StoreRepository.GetInstance();
+
     static void Main(string[] args)
     {
       Log.Logger = new LoggerConfiguration().WriteTo.Console().CreateLogger();
+      
       var program = new Program();
 
       program.CaptureOutput();
@@ -43,6 +45,7 @@ namespace Project0.StoreApplication.Client
     {
 
       Log.Information("in input");
+
       OutputStores();
 
       Console.WriteLine("Pick a Store:");

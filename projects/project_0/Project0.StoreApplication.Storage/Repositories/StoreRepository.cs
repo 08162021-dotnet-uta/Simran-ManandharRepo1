@@ -11,7 +11,7 @@ namespace Project0.StoreApplication.Storage.Repositories
     private const string _path = @"/Users/Contemplative/Documents/Revature/simran_code/data/stores.xml"
     public List<Store> Stores { get; }
 
-    public StoreRepository()
+    private StoreRepository()
     {
 
       var fileAdapter = new FileAdapter();
@@ -28,5 +28,15 @@ namespace Project0.StoreApplication.Storage.Repositories
       Stores = fileAdapter.ReadFromFile<_path>();
     }
 
+    private static StoreRepository _storeRepository;
+
+    public static StoreRepository GetInstance()
+    {
+      if(_storeRepository == null)
+      {
+        _storeRepository = new StoreRepository();
+      }
+      return _storeRepository;
+    }
   }
 }
