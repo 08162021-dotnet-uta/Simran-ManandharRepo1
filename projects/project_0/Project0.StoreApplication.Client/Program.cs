@@ -13,7 +13,7 @@ namespace Project0.StoreApplication.Client
   class Program
   {
 
-    private StoreRepository _storeRepository = new StoreRepository();
+    private readonly StoreRepository _storeRepository = new StoreRepository();
     static void Main(string[] args)
     {
       Log.Logger = new LoggerConfiguration().WriteTo.Console().CreateLogger();
