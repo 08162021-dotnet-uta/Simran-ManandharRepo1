@@ -12,6 +12,8 @@ namespace Project0.StoreApplication.Client
   /// </summary>
   class Program
   {
+
+    private StoreRepository _storeRepository = new StoreRepository();
     static void Main(string[] args)
     {
       Log.Logger = new LoggerConfiguration().WriteTo.Console().CreateLogger();
@@ -30,8 +32,8 @@ namespace Project0.StoreApplication.Client
     private void OutputStores()
     {
       Log.Information("in output stores");
-      var storeRepository = new StoreRepository();
-      foreach (var store in storeRepository.Stores)
+
+      foreach (var store in _storeRepository.Stores)
       {
         Console.WriteLine(store);
       }
@@ -52,10 +54,8 @@ namespace Project0.StoreApplication.Client
 
     private void CaptureOutput()
     {
-      var storeRepository = new StoreRepository();
-      Console.WriteLine("You have selected: " + storeRepository.Stores[CaptureInput()]);
+      Console.WriteLine("You have selected: " + _storeRepository.Stores[CaptureInput()]);
     }
   }
 }
-
 
