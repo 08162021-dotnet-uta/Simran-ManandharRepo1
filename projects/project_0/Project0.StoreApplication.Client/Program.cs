@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Project0.StoreApplication.Domain.Models;
 using Project0.StoreApplication.Storage.Repositories;
 using Serilog;
+using Project0.StoreApplication.Client.Singletons;
 
 namespace Project0.StoreApplication.Client
 {
@@ -13,52 +14,77 @@ namespace Project0.StoreApplication.Client
   class Program
   {
 
-    private readonly StoreRepository _storeRepository = StoreRepository.GetInstance();
+    private static readonly StoreRepository _storeRepository = StoreRepository.Instance;
 
-    static void Main(string[] args)
+    private static readonly CustomerSingleton _customerSingleton = CustomerSingleton.Instance;
+
+    private const string _logFilePath = @"/Users/Contemplative/Documents/Revature/simran_code/data/logs.txt";
+
+    private static void Main(string[] args)
     {
-      Log.Logger = new LoggerConfiguration().WriteTo.Console().CreateLogger();
-      
-      var program = new Program();
+      Log.Logger = new LoggerConfiguration().WriteTo.File(_logFilePath).CreateLogger();
 
-      program.CaptureOutput();
+      Run();
     }
 
-    private List<Store> AllTheStores()
+    private static void Run()
     {
-      var stores = new List<Store>();
+      Log.Information("Method: Run");
 
-      return stores;
-    }
+      //customers
 
-    private void OutputStores()
-    {
-      Log.Information("in output stores");
-
-      foreach (var store in _storeRepository.Stores)
+      if (_customerSingleton.Customers.Count == 0)
       {
-        Console.WriteLine(store);
+        _customerSingleton.Add(new Customer());
+      }
+      var customer = _customerSingleton.Customers[Capture<Customer>(_customerSingleton.Customers)];
+
+      Console.WriteLine(customer);
+
+      //stores
+      // Output<Store>(_storesSingleton.Stores);
+
+      //products
+      // Output<Product>(_productSingleton.Products);
+
+
+      // CaptureOutput();
+      // Console.ReadLine();
+    }
+
+    // private List<Store> AllTheStores()
+    // {
+    //   var stores = new List<Store>();
+
+    //   return stores;
+    // }
+
+    private static void Output<T>(List<T> data) where T : class
+    {
+      Log.Information($"method: Output<{typeof(T)}>"); //string interpolation
+
+      var index = 0;
+
+      foreach (var item in data)
+      {
+        Console.WriteLine($"[{++index}] - {item}");
       }
     }
 
-    private int CaptureInput()
+    private static int Capture<T>(List<T> data) where T : class
     {
 
-      Log.Information("in input");
+      Log.Information("method: Captureinput");
 
-      OutputStores();
+      Output<T>(data);
 
-      Console.WriteLine("Pick a Store:");
+      Console.WriteLine("Pick an option:");
 
       int input = int.Parse(Console.ReadLine());
 
-      return input-1;
+      return input - 1;
     }
 
-    private void CaptureOutput()
-    {
-      Console.WriteLine("You have selected: " + _storeRepository.Stores[CaptureInput()]);
-    }
   }
 }
 

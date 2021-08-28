@@ -1,0 +1,9 @@
+2021-08-27 16:18:09.734 -04:00 [INF] Method: Run
+2021-08-27 16:18:09.969 -04:00 [INF] method: Output<Project0.StoreApplication.Domain.Models.Customer>
+2021-08-27 16:21:41.663 -04:00 [INF] Method: Run
+2021-08-27 16:21:41.888 -04:00 [INF] method: Output<Project0.StoreApplication.Domain.Models.Customer>
+2021-08-27 16:22:10.932 -04:00 [INF] Method: Run
+2021-08-27 16:22:11.130 -04:00 [INF] method: Output<Project0.StoreApplication.Domain.Models.Customer>
+2021-08-28 13:27:00.498 -04:00 [INF] Method: Run
+2021-08-28 13:27:00.557 -04:00 [INF] method: Captureinput
+2021-08-28 13:27:00.557 -04:00 [INF] method: Output<Project0.StoreApplication.Domain.Models.Customer>

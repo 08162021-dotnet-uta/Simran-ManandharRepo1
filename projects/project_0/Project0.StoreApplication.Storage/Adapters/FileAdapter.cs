@@ -6,32 +6,32 @@ using System.IO;
 namespace Project0.StoreApplication.Storage.Adapters
 {
   public class FileAdapter
-    {
-    public List<F> ReadFromFile<F>(string path) where F : class
+  {
+    public List<T> ReadFromFile<T>(string path) where T : class
     {
       // var path = @"/Users/Contemplative/Documents/Revature/simran_code/data/project_0.xml";
 
+      if (!File.Exists(path))
+      {
+        return null;
+      }
+
       var file = new StreamReader(path);
 
-      var xml = new XmlSerializer(typeof(F));
+      var xml = new XmlSerializer(typeof(List<T>));
 
-      var result = xml.Deserialize(file) as List<F>;
+      var result = xml.Deserialize(file) as List<T>;
 
       return result;
     }
 
-    public void WriteToFile(List<Store> stores)
+    public void WriteToFile<T>(string path, List<T> data) where T : class
     {
-      var path = @"/Users/Contemplative/Documents/Revature/simran_code/data/project_0.xml";
-
       var file = new StreamWriter(path);
 
-      var xml = new XmlSerializer(typeof(List<Store>));
+      var xml = new XmlSerializer(typeof(List<T>));
 
-      xml.Serialize(file, stores);
-
-      file.Close();
-
+      xml.Serialize(file, data);
     }
 
     public void UseReadFile()

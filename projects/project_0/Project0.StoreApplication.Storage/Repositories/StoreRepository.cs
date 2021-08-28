@@ -8,7 +8,8 @@ namespace Project0.StoreApplication.Storage.Repositories
 {
   public class StoreRepository
   {
-    private const string _path = @"/Users/Contemplative/Documents/Revature/simran_code/data/stores.xml"
+    private const string _path = @"/Users/Contemplative/Documents/Revature/simran_code/data/stores.xml";
+
     public List<Store> Stores { get; }
 
     private StoreRepository()
@@ -24,19 +25,23 @@ namespace Project0.StoreApplication.Storage.Repositories
       //   new SamsungStore(),
       // });
       // }
-      
-      Stores = fileAdapter.ReadFromFile<_path>();
+
+      // Stores = fileAdapter.ReadFromFile<List<Store>>(_path);
     }
 
     private static StoreRepository _storeRepository;
 
-    public static StoreRepository GetInstance()
+    public static StoreRepository Instance
     {
-      if(_storeRepository == null)
+      get
       {
-        _storeRepository = new StoreRepository();
+        if (_storeRepository == null)
+        {
+          _storeRepository = new StoreRepository();
+        }
+        return _storeRepository;
       }
-      return _storeRepository;
     }
+
   }
 }
