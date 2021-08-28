@@ -2,7 +2,6 @@
 using Project0.StoreApplication.Domain.Abstracts;
 using System.Collections.Generic;
 using Project0.StoreApplication.Domain.Models;
-using Project0.StoreApplication.Storage.Repositories;
 using Serilog;
 using Project0.StoreApplication.Client.Singletons;
 
@@ -14,9 +13,11 @@ namespace Project0.StoreApplication.Client
   class Program
   {
 
-    private static readonly StoreRepository _storeRepository = StoreRepository.Instance;
+    // private static readonly StoreRepository _storeRepository = StoreRepository.Instance;
 
     private static readonly CustomerSingleton _customerSingleton = CustomerSingleton.Instance;
+    private static readonly StoreSingleton _storeSingleton = StoreSingleton.Instance;
+
 
     private const string _logFilePath = @"/Users/Contemplative/Documents/Revature/simran_code/data/logs.txt";
 
@@ -38,6 +39,7 @@ namespace Project0.StoreApplication.Client
         _customerSingleton.Add(new Customer());
       }
       var customer = _customerSingleton.Customers[Capture<Customer>(_customerSingleton.Customers)];
+      var store = _storeSingleton.Stores[Capture<Store>(_storeSingleton.Stores)];
 
       Console.WriteLine(customer);
 
