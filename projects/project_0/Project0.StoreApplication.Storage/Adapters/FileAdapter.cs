@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Xml.Serialization;
-using Project0.StoreApplication.Domain.Abstracts;
 using System.IO;
+using Project0.StoreApplication.Domain.Models;
 
 namespace Project0.StoreApplication.Storage.Adapters
 {

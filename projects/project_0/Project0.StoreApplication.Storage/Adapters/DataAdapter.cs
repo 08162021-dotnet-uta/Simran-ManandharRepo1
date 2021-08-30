@@ -1,5 +1,4 @@
 using Microsoft.EntityFrameworkCore;
-using Project0.StoreApplication.Domain.Abstracts;
 using Project0.StoreApplication.Domain.Models;
 
 namespace Project0.StoreApplication.Storage.Adapters
