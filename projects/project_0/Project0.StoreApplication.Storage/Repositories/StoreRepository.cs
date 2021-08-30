@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Project0.StoreApplication.Domain.Abstracts;
 using Project0.StoreApplication.Domain.Interfaces;
 using Project0.StoreApplication.Domain.Models;
 using Project0.StoreApplication.Storage.Adapters;
@@ -31,9 +30,9 @@ namespace Project0.StoreApplication.Storage.Repositories
       throw new System.NotImplementedException();
     }
 
-    public bool Insert(Store entry)
+    public bool Insert(List<Store> entry)
     {
-      _fileAdapter.WriteToFile<Store>(_path, new List<Store> { entry });
+      _fileAdapter.WriteToFile<Store>(_path, entry);
       return true;
     }
 

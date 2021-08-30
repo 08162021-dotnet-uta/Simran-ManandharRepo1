@@ -30,9 +30,9 @@ namespace Project0.StoreApplication.Storage.Repositories
       throw new System.NotImplementedException();
     }
 
-    public bool Insert(Product entry)
+    public bool Insert(List<Product> entry)
     {
-      _fileAdapter.WriteToFile<Product>(_path, new List<Product> { entry });
+      _fileAdapter.WriteToFile<Product>(_path, entry);
       return true;
     }
 
