@@ -17,6 +17,8 @@ namespace Project0.StoreApplication.Client
 
     private static readonly CustomerSingleton _customerSingleton = CustomerSingleton.Instance;
     private static readonly StoreSingleton _storeSingleton = StoreSingleton.Instance;
+    private static readonly ProductSingleton _productSingleton = ProductSingleton.Instance;
+
 
 
     private const string _logFilePath = @"/Users/Contemplative/Documents/Revature/simran_code/data/logs.txt";
@@ -40,6 +42,7 @@ namespace Project0.StoreApplication.Client
       }
       var customer = _customerSingleton.Customers[Capture<Customer>(_customerSingleton.Customers)];
       var store = _storeSingleton.Stores[Capture<Store>(_storeSingleton.Stores)];
+      var product = _productSingleton.Products[Capture<Product>(_productSingleton.Products)];
 
       Console.WriteLine(customer);
 

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfProduct xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Product>
+    <Name>Mac</Name>
+    <Price>1500</Price>
+  </Product>
+  <Product>
+    <Name>iPhoneX</Name>
+    <Price>1099</Price>
+  </Product>
+  <Product>
+    <Name>ipad</Name>
+    <Price>399</Price>
+  </Product>
+</ArrayOfProduct>
