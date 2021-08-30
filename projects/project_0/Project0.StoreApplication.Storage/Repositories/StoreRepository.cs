@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Project0.StoreApplication.Domain.Abstracts;
 using Project0.StoreApplication.Domain.Interfaces;
+using Project0.StoreApplication.Domain.Models;
 using Project0.StoreApplication.Storage.Adapters;
 
 namespace Project0.StoreApplication.Storage.Repositories
@@ -16,7 +17,12 @@ namespace Project0.StoreApplication.Storage.Repositories
     {
       if (_fileAdapter.ReadFromFile<Store>(_path) == null)
       {
-        _fileAdapter.WriteToFile<Store>(_path, new List<Store>());
+        _fileAdapter.WriteToFile<Store>(_path, new List<Store>()
+        {
+          new Store(){Location = "Hoston, TX"},
+          new Store(){Location = "Dallas, TX"},
+          new Store(){Location = "Austin, TX"}
+        });
       }
     }
 

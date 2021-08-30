@@ -15,7 +15,6 @@ namespace Project0.StoreApplication.Domain.Models
 
     public Customer()
     {
-      Name = "Simran";
     }
 
   }
