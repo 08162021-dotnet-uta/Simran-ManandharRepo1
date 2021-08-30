@@ -16,7 +16,12 @@ namespace Project0.StoreApplication.Storage.Repositories
     {
       if (_fileAdapter.ReadFromFile<Customer>(_path) == null)
       {
-        _fileAdapter.WriteToFile<Customer>(_path, new List<Customer>());
+        _fileAdapter.WriteToFile<Customer>(_path, new List<Customer>()
+        {
+          new Customer(){Name = "Anna Clark"},
+          new Customer(){Name = "May Aden"},
+          new Customer(){Name = "Grey Park"}
+        });
       }
     }
 
