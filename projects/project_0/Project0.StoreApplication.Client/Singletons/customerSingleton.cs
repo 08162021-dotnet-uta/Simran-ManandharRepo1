@@ -29,10 +29,10 @@ namespace Project0.StoreApplication.Client.Singletons
       Customers = _customerRepository.Select();
     }
 
-    public void Add(Customer customer)
-    {
-      _customerRepository.Insert(customer);
-      Customers = _customerRepository.Select();
-    }
+    // public void Add(Customer customer)
+    // {
+    //   _customerRepository.Insert(customer);
+    //   Customers = _customerRepository.Select();
+    // }
   }
 }

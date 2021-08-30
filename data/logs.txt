@@ -51,3 +51,7 @@
 2021-08-29 21:38:42.851 -04:00 [INF] Method: Run
 2021-08-29 21:38:42.925 -04:00 [INF] method: Captureinput
 2021-08-29 21:38:42.926 -04:00 [INF] method: Output<Project0.StoreApplication.Domain.Models.Customer>
+2021-08-29 21:39:42.340 -04:00 [INF] method: Captureinput
+2021-08-29 21:39:42.340 -04:00 [INF] method: Output<Project0.StoreApplication.Domain.Abstracts.Store>
+2021-08-29 21:39:42.635 -04:00 [INF] method: Captureinput
+2021-08-29 21:39:42.635 -04:00 [INF] method: Output<Project0.StoreApplication.Domain.Models.Product>

@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Project0.StoreApplication.Domain.Abstracts;
 using Project0.StoreApplication.Domain.Models;
 using Project0.StoreApplication.Storage.Repositories;
 
@@ -30,10 +29,10 @@ namespace Project0.StoreApplication.Client.Singletons
       Stores = _storeRepository.Select();
     }
 
-    public void Add(Store Store)
-    {
-      _storeRepository.Insert(Store);
-      Stores = _storeRepository.Select();
-    }
+    // public void Add(Store Store)
+    // {
+    //   _storeRepository.Insert(Store);
+    //   Stores = _storeRepository.Select();
+    // }
   }
 }
