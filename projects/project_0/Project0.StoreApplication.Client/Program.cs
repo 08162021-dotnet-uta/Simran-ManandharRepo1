@@ -80,7 +80,7 @@ namespace Project0.StoreApplication.Client
       int count = 0;
       foreach (var order in _orderSingleton.getOrderRepository().GetOrders())
       {
-        Console.WriteLine("{0} - {1}", ++count, order);
+        Console.WriteLine("\n{0} - {1}", ++count, order);
       }
     }
 
