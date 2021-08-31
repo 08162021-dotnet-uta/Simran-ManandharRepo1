@@ -33,5 +33,9 @@ namespace Project0.StoreApplication.Client.Singletons
     {
       _orderRepository.AddToOrder(store, product);
     }
+    public OrderRepository getOrderRepository()
+    {
+      return _orderRepository;
+    }
   }
 }
