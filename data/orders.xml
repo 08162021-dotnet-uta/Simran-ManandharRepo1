@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfOrder xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Order>
+    <Store>
+      <Location>Dallas, TX</Location>
+    </Store>
+    <Product>
+      <Name>ipad</Name>
+      <Price>399</Price>
+    </Product>
+  </Order>
+  <Order>
+    <Store>
+      <Location>Austin, TX</Location>
+    </Store>
+    <Product>
+      <Name>Mac</Name>
+      <Price>1500</Price>
+    </Product>
+  </Order>
+  <Order>
+    <Store>
+      <Location>Hoston, TX</Location>
+    </Store>
+    <Product>
+      <Name>iPhoneX</Name>
+      <Price>1099</Price>
+    </Product>
+  </Order>
+  <Order>
+    <Store>
+      <Location>Hoston, TX</Location>
+    </Store>
+    <Product>
+      <Name>Mac</Name>
+      <Price>1500</Price>
+    </Product>
+  </Order>
+  <Order>
+    <Store>
+      <Location>Dallas, TX</Location>
+    </Store>
+    <Product>
+      <Name>ipad</Name>
+      <Price>399</Price>
+    </Product>
+  </Order>
+</ArrayOfOrder>
