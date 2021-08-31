@@ -3,10 +3,10 @@ use master;
 go
 
 -- CREATE
-create database StoreApplicationDB;
+create database AppleStoreApplicationDB;
 go
 
-use StoreApplicationDB;
+use AppleStoreApplicationDB;
 go
 
 create schema Store;
@@ -34,13 +34,13 @@ create table Store.Store
 
 create table Store.Product
 (
-    ProductId tiynint not null identity(1,1)
+    ProductId tinyint not null identity(1,1)
     ,Name nvarchar(100) not null
     ,Price money not null
     ,Active bit not null
 );
 
-create table Store.Order
+create table Store.[Order]
 (
     OrderId smallint not null identity(1,1)
     ,CustomerId tinyint not null
@@ -63,7 +63,7 @@ alter table Customer.Customer
 alter table Store.Store
     add constraint PK_Store primary key (StoreId);
 
-alter table Store.Order
+alter table Store.[Order]
     add constraint PK_Order primary key (OrderId);
 
 alter table Store.OrderProduct
@@ -72,14 +72,28 @@ alter table Store.OrderProduct
 alter table Store.Product
     add constraint PK_Product primary key (ProductId);
 
-alter table Store.Order
+alter table Store.[Order]
     add constraint FK_Order_Customer foreign key (CustomerId) references Customer.Customer(CustomerId);
 
-alter table Store.Order
+alter table Store.[Order]
     add constraint FK_Order_Store foreign key (StoreId) references Store.Store(StoreId);
 
-alter table Customer.Customer
-    add Active bit not null;
+alter table Store.[Order]
+	add constraint DF_Order default (1) for Active;
+
+alter table Customer.Customer 
+	add constraint DF_Customer default (1) for Active;
+
+
+alter table Store.OrderProduct
+	add constraint DF_OrderProduct default (1) for Active;
+
+
+alter table Store.Product
+	add constraint DF_Product default (1) for Active;
+
+alter table Store.Store
+	add constraint DF_Store default (1) for Active;
 
 -- DROP
 --drop database StoreApplicationDB;

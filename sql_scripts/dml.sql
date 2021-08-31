@@ -4,23 +4,22 @@ go
 
 -- INSERT
 insert into Customer.Customer
-  ([Name], Active)
+  ([Name])
 values
-  ("fred", 1),
-  ("Tyler", 1),
-  ("Cory", 1);
+  ('fred'),
+  ('Tyler'),
+  ('Cory');
+ go
 
-insert into Store.Product
-  ([Name], Price, Active)
-values
-  ("computer", 500, 1),
-  ("monitor", 200, 1);
+insert into Store.Product([Name], Price)
+values ('iPad', 399), ('Mac', 1300), ('iPhone X', 799), ('iWatch', 499);
+go
 
 insert into Store.Store
-  ([Name], Active)
+  ([Name])
 values
-  ("Best Buy", 1),
-  ("Micro Center", 1);
+  (Best Buy'),
+  ('Micro Center');
 
 -- UPDATE
 update Customer.Customer
