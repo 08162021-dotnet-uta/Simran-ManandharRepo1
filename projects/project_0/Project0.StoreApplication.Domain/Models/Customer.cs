@@ -10,7 +10,7 @@ namespace Project0.StoreApplication.Domain.Models
 
     public override string ToString()
     {
-      return $"{Name} with {Orders.Count} orders so far";
+      return $"{Name}";
     }
 
     public Customer()
