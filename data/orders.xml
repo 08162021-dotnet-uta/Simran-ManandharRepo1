@@ -1,46 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfOrder xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Order>
+    <OrderId>0</OrderId>
     <Store>
+      <StoreId>0</StoreId>
       <Location>Dallas, TX</Location>
     </Store>
     <Product>
+      <ProductId>0</ProductId>
       <Name>ipad</Name>
       <Price>399</Price>
     </Product>
   </Order>
   <Order>
+    <OrderId>0</OrderId>
     <Store>
+      <StoreId>0</StoreId>
       <Location>Austin, TX</Location>
     </Store>
     <Product>
+      <ProductId>0</ProductId>
       <Name>Mac</Name>
       <Price>1500</Price>
     </Product>
   </Order>
   <Order>
+    <OrderId>0</OrderId>
     <Store>
+      <StoreId>0</StoreId>
       <Location>Hoston, TX</Location>
     </Store>
     <Product>
+      <ProductId>0</ProductId>
       <Name>iPhoneX</Name>
       <Price>1099</Price>
     </Product>
   </Order>
   <Order>
+    <OrderId>0</OrderId>
     <Store>
+      <StoreId>0</StoreId>
       <Location>Hoston, TX</Location>
     </Store>
     <Product>
+      <ProductId>0</ProductId>
       <Name>Mac</Name>
       <Price>1500</Price>
     </Product>
   </Order>
   <Order>
+    <OrderId>0</OrderId>
     <Store>
+      <StoreId>0</StoreId>
       <Location>Dallas, TX</Location>
     </Store>
     <Product>
+      <ProductId>0</ProductId>
+      <Name>ipad</Name>
+      <Price>399</Price>
+    </Product>
+  </Order>
+  <Order>
+    <OrderId>0</OrderId>
+    <Store>
+      <StoreId>0</StoreId>
+      <Location>Dallas, TX</Location>
+    </Store>
+    <Product>
+      <ProductId>0</ProductId>
       <Name>ipad</Name>
       <Price>399</Price>
     </Product>

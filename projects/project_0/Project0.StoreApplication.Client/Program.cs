@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Project0.StoreApplication.Domain.Models;
 using Serilog;
 using Project0.StoreApplication.Client.Singletons;
+using Project0.StoreApplication.Storage;
 
 namespace Project0.StoreApplication.Client
 {
@@ -24,7 +25,7 @@ namespace Project0.StoreApplication.Client
     private static void Main(string[] args)
     {
       Log.Logger = new LoggerConfiguration().WriteTo.File(_logFilePath).CreateLogger();
-
+      HelloSQL();
       Run();
     }
 
@@ -55,14 +56,14 @@ namespace Project0.StoreApplication.Client
       // Console.ReadLine();
       var currentCustomer = PickCustomer();
       var currentStore = PickStore();
-      var currentProduct = PickProduct();
+      // var currentProduct = PickProduct();
 
-      Console.WriteLine("\nYou have selected " + currentProduct + "from " + currentStore + ".");
+      // Console.WriteLine("\nYou have selected " + currentProduct + "from " + currentStore + ".");
       Console.WriteLine("\nPlease press y to confirm your purchase or any other letter to quit.");
       var input = Console.ReadLine();
       if (input == "y")
       {
-        _orderSingleton.AddToOrderRepo(currentStore, currentProduct);
+        // _orderSingleton.AddToOrderRepo(currentStore, currentProduct);
       }
 
       Console.WriteLine("\nPress y to view your order history");
@@ -134,13 +135,23 @@ namespace Project0.StoreApplication.Client
       return storeSing[input - 1];
     }
 
-    static Product PickProduct()
+    // static Product PickProduct()
+    // {
+    //   var productSing = _productSingleton.Products;
+    //   Output(productSing);
+    //   Console.WriteLine("\nPlease select a product number to purchase\n");
+    //   int input = int.Parse(Console.ReadLine());
+    //   return productSing[input - 1];
+    // }
+    private static void HelloSQL()
     {
-      var productSing = _productSingleton.Products;
-      Output(productSing);
-      Console.WriteLine("\nPlease select a product number to purchase\n");
-      int input = int.Parse(Console.ReadLine());
-      return productSing[input - 1];
+      var def = new DemoEF();
+
+      foreach (var item in def.GetProducts())
+      {
+        Console.WriteLine(item);
+      }
+
     }
   }
 }
