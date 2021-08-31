@@ -15,7 +15,7 @@ namespace Project0.StoreApplication.Storage.Adapters
 
     protected override void OnConfiguring(DbContextOptionsBuilder builder)
     {
-      builder.UseSqlServer("server=(localdb)\\MSSQLLocalDB;database=StoreApplicationDB;user id =sqladmin;password=Password12345");
+      builder.UseSqlServer("server=08162021dotnetuta.database.windows.net;database=AppleStoreApplicationDB;user id=sqladmin;password=Password12345");
     }
 
 
