@@ -2,6 +2,8 @@ namespace Project0.StoreApplication.Domain.Models
 {
   public class Order
   {
+    public int OrderId { get; set; }
+
     // public Customer Customer { }
 
     public Store Store { get; set; }

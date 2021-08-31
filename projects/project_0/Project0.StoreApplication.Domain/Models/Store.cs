@@ -5,6 +5,8 @@ namespace Project0.StoreApplication.Domain.Models
 
   public class Store
   {
+    public int StoreId { get; set; }
+
     public string Location { get; set; }
     private List<Order> Orders = new List<Order>();
 
