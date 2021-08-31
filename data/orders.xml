@@ -72,4 +72,28 @@
       <Price>399</Price>
     </Product>
   </Order>
+  <Order>
+    <OrderId>0</OrderId>
+    <Store>
+      <StoreId>0</StoreId>
+      <Location>Hoston, TX</Location>
+    </Store>
+    <Product>
+      <ProductId>3</ProductId>
+      <Name>iPad</Name>
+      <Price>399.0000</Price>
+    </Product>
+  </Order>
+  <Order>
+    <OrderId>0</OrderId>
+    <Store>
+      <StoreId>0</StoreId>
+      <Location>Dallas, TX</Location>
+    </Store>
+    <Product>
+      <ProductId>5</ProductId>
+      <Name>iPhone X</Name>
+      <Price>799.0000</Price>
+    </Product>
+  </Order>
 </ArrayOfOrder>

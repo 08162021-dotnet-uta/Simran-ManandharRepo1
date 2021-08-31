@@ -25,7 +25,7 @@ namespace Project0.StoreApplication.Client
     private static void Main(string[] args)
     {
       Log.Logger = new LoggerConfiguration().WriteTo.File(_logFilePath).CreateLogger();
-      HelloSQL();
+
       Run();
     }
 
@@ -56,14 +56,14 @@ namespace Project0.StoreApplication.Client
       // Console.ReadLine();
       var currentCustomer = PickCustomer();
       var currentStore = PickStore();
-      // var currentProduct = PickProduct();
+      var currentProduct = PickProduct();
 
-      // Console.WriteLine("\nYou have selected " + currentProduct + "from " + currentStore + ".");
+      Console.WriteLine("\nYou have selected " + currentProduct + "from " + currentStore + ".");
       Console.WriteLine("\nPlease press y to confirm your purchase or any other letter to quit.");
       var input = Console.ReadLine();
       if (input == "y")
       {
-        // _orderSingleton.AddToOrderRepo(currentStore, currentProduct);
+        _orderSingleton.AddToOrderRepo(currentStore, currentProduct);
       }
 
       Console.WriteLine("\nPress y to view your order history");
@@ -135,24 +135,32 @@ namespace Project0.StoreApplication.Client
       return storeSing[input - 1];
     }
 
-    // static Product PickProduct()
-    // {
-    //   var productSing = _productSingleton.Products;
-    //   Output(productSing);
-    //   Console.WriteLine("\nPlease select a product number to purchase\n");
-    //   int input = int.Parse(Console.ReadLine());
-    //   return productSing[input - 1];
-    // }
-    private static void HelloSQL()
+    static Product PickProduct()
     {
+      // var productSing = _productSingleton.Products;
+      // Output(productSing);
       var def = new DemoEF();
-
+      int index = 0;
       foreach (var item in def.GetProducts())
       {
-        Console.WriteLine(item);
+        Console.WriteLine("\n" + ++index + ". " + item.Name + ", Price: $" + item.Price);
       }
 
+      Console.WriteLine("\nPlease select a product number to purchase\n");
+      int input = int.Parse(Console.ReadLine());
+      var product = def.GetProducts()[input - 1];
+      return product;
     }
+    // private static void HelloSQL()
+    // {
+    //   var def = new DemoEF();
+
+    //   foreach (var item in def.GetProducts())
+    //   {
+    //     Console.WriteLine(item);
+    //   }
+
+    // }
   }
 }
 
