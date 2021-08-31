@@ -12,9 +12,6 @@ namespace Project0.StoreApplication.Client
   /// </summary>
   class Program
   {
-
-    // private static readonly StoreRepository _storeRepository = StoreRepository.Instance;
-
     private static readonly CustomerSingleton _customerSingleton = CustomerSingleton.Instance;
     private static readonly StoreSingleton _storeSingleton = StoreSingleton.Instance;
     private static readonly ProductSingleton _productSingleton = ProductSingleton.Instance;
@@ -32,47 +29,63 @@ namespace Project0.StoreApplication.Client
     private static void Run()
     {
       Log.Information("Method: Run");
-
-      //customers
-
-      // if (_customerSingleton.Customers.Count == 0)
-      // {
-      //   _customerSingleton.Add(new Customer());
-      // }
-      // var customer = _customerSingleton.Customers[Capture<Customer>(_customerSingleton.Customers)];
-      // var store = _storeSingleton.Stores[Capture<Store>(_storeSingleton.Stores)];
-      // var product = _productSingleton.Products[Capture<Product>(_productSingleton.Products)];
-
-      // Console.WriteLine(customer);
-
-      //stores
-      // Output<Store>(_storesSingleton.Stores);
-
-      //products
-      // Output<Product>(_productSingleton.Products);
-
-
-      // CaptureOutput();
-      // Console.ReadLine();
+      Console.WriteLine("\n\nWelcome to the Apple Store");
       var currentCustomer = PickCustomer();
-      var currentStore = PickStore();
-      var currentProduct = PickProduct();
+      Console.WriteLine($"\n\nHello, {currentCustomer.Name}!\n");
+      SelectOptions();
+    }
 
-      Console.WriteLine("\nYou have selected " + currentProduct + "from " + currentStore + ".");
-      Console.WriteLine("\nPlease press y to confirm your purchase or any other letter to quit.");
-      var input = Console.ReadLine();
-      if (input == "y")
+    public static void SelectOptions()
+    {
+      Console.WriteLine("\nSelect an option:\n");
+      Console.WriteLine("1. Go to the store locations\n2. Go to your order history\n3. Exit\n");
+      int option = int.Parse(Console.ReadLine());
+      if (option == 1)
       {
-        _orderSingleton.AddToOrderRepo(currentStore, currentProduct);
+        var currentStore = PickStore();
+        var currentProduct = PickProduct();
+        Console.WriteLine("\nYou have selected " + currentProduct + "from " + currentStore + ".");
+        Console.WriteLine("\nPlease press y to confirm your purchase");
+        var input = Console.ReadLine();
+        if (input == "y")
+        {
+          _orderSingleton.AddToOrderRepo(currentStore, currentProduct);
+        }
+        Console.WriteLine("\nYou have purshased the item!\n");
+        Console.WriteLine("Press y to goto Home or any other key to exit");
+        string key = Console.ReadLine();
+        keyOptions(key);
       }
-
-      Console.WriteLine("\nPress y to view your order history");
-      var key = Console.ReadLine();
-      if (key == "y")
+      else if (option == 2)
       {
         ViewOrders();
+        Console.WriteLine("Do you want to go back? if yes, press y or any other key to exit.");
+        string key = Console.ReadLine();
+        keyOptions(key);
+        SelectOptions();
       }
+      else
+      {
+        Exit();
+      }
+    }
 
+    private static void keyOptions(string key)
+    {
+      if (key == "y")
+      {
+        SelectOptions();
+      }
+      else
+      {
+        Exit();
+      }
+    }
+
+    private static void Exit()
+    {
+      Console.WriteLine("\nThank you and come back soon!\n");
+      System.Environment.Exit(0);
     }
 
     private static void ViewOrders()
@@ -84,16 +97,9 @@ namespace Project0.StoreApplication.Client
       }
     }
 
-    // private List<Store> AllTheStores()
-    // {
-    //   var stores = new List<Store>();
-
-    //   return stores;
-    // }
-
     private static void Output<T>(List<T> data) where T : class
     {
-      Log.Information($"method: Output<{typeof(T)}>"); //string interpolation
+      Log.Information($"method: Output<{typeof(T)}>");
 
       var index = 0;
 
@@ -102,26 +108,11 @@ namespace Project0.StoreApplication.Client
         Console.WriteLine($"\n{++index}. {item}");
       }
     }
-
-    // private static int Capture<T>(List<T> data) where T : class
-    // {
-
-    //   Log.Information("method: Captureinput");
-
-    //   Output<T>(data);
-
-    //   Console.WriteLine("Pick an option:");
-
-    //   int input = int.Parse(Console.ReadLine());
-
-    //   return input - 1;
-    // }
-
     static Customer PickCustomer()
     {
+      Console.WriteLine("\nPlease select your customer ID \n");
       var customerSing = _customerSingleton.Customers;
       Output(customerSing);
-      Console.WriteLine("\nPlease insert your customer ID \n");
       int input = int.Parse(Console.ReadLine());
       return customerSing[input - 1];
     }
@@ -137,8 +128,6 @@ namespace Project0.StoreApplication.Client
 
     static Product PickProduct()
     {
-      // var productSing = _productSingleton.Products;
-      // Output(productSing);
       var def = new DemoEF();
       int index = 0;
       foreach (var item in def.GetProducts())
@@ -151,16 +140,6 @@ namespace Project0.StoreApplication.Client
       var product = def.GetProducts()[input - 1];
       return product;
     }
-    // private static void HelloSQL()
-    // {
-    //   var def = new DemoEF();
-
-    //   foreach (var item in def.GetProducts())
-    //   {
-    //     Console.WriteLine(item);
-    //   }
-
-    // }
   }
 }
 
