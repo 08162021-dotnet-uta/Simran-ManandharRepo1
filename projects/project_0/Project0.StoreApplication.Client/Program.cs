@@ -28,6 +28,7 @@ namespace Project0.StoreApplication.Client
 
     private static void Run()
     {
+      Console.Clear();
       Log.Information("Method: Run");
       Console.WriteLine("\n\n---Welcome to the Apple Store---");
       var currentCustomer = PickCustomer();
@@ -56,6 +57,7 @@ namespace Project0.StoreApplication.Client
         }
         else
         {
+          Console.Clear();
           SelectOptions();
         }
         Console.Clear();
@@ -129,9 +131,9 @@ namespace Project0.StoreApplication.Client
     }
     static Customer PickCustomer()
     {
-      Console.Write("\nPlease select your customer ID: ");
       var customerSing = _customerSingleton.Customers;
       Output(customerSing);
+      Console.Write("\nPlease select your customer ID: ");
       int input = int.Parse(Console.ReadLine());
       return customerSing[input - 1];
     }
