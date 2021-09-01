@@ -29,8 +29,9 @@ namespace Project0.StoreApplication.Client
     private static void Run()
     {
       Log.Information("Method: Run");
-      Console.WriteLine("\n\nWelcome to the Apple Store");
+      Console.WriteLine("\n\n---Welcome to the Apple Store---");
       var currentCustomer = PickCustomer();
+      Console.Clear();
       Console.WriteLine($"\n\nHello, {currentCustomer.Name}!\n");
       SelectOptions();
     }
@@ -44,29 +45,44 @@ namespace Project0.StoreApplication.Client
       {
         var currentStore = PickStore();
         var currentProduct = PickProduct();
+        Console.Clear();
         Console.WriteLine("\nYou have selected " + currentProduct + "from " + currentStore + ".\n");
-        Console.WriteLine("\nPlease press y to confirm your purchase");
+        Console.Write("\nPlease press y to confirm your purchase or any key to go Home: ");
         var input = Console.ReadLine();
         if (input == "y")
         {
+          Console.Clear();
           _orderSingleton.AddToOrderRepo(currentStore, currentProduct);
         }
-        Console.WriteLine("\nCongratulations! You have purshased the item!\n");
-        Console.WriteLine("Press y to goto Home or any other key to exit");
+        else
+        {
+          SelectOptions();
+        }
+        Console.Clear();
+        Console.WriteLine("\nCongratulations! You have purchased the item!\n");
+        Console.Write("Press y to go Home or any other key to exit: ");
         string key = Console.ReadLine();
         keyOptions(key);
       }
       else if (option == 2)
       {
+        Console.Clear();
         ViewOrders();
-        Console.WriteLine("Do you want to go back? if yes, press y or any other key to exit.");
+        Console.Write("\nDo you want to go back? if yes, press y or any other key to exit: ");
         string key = Console.ReadLine();
         keyOptions(key);
         SelectOptions();
       }
-      else
+      else if (option == 3)
       {
         Exit();
+      }
+      else
+      {
+        Log.Information("Invalid input");
+        Console.WriteLine("***You have entered wrong value***\n");
+        Console.Clear();
+        SelectOptions();
       }
     }
 
@@ -74,6 +90,7 @@ namespace Project0.StoreApplication.Client
     {
       if (key == "y")
       {
+        Console.Clear();
         SelectOptions();
       }
       else
@@ -84,12 +101,14 @@ namespace Project0.StoreApplication.Client
 
     private static void Exit()
     {
+      Console.Clear();
       Console.WriteLine("\nThank you and come back soon!\n");
       System.Environment.Exit(0);
     }
 
     private static void ViewOrders()
     {
+      Console.Clear();
       int count = 0;
       foreach (var order in _orderSingleton.getOrderRepository().GetOrders())
       {
@@ -110,7 +129,7 @@ namespace Project0.StoreApplication.Client
     }
     static Customer PickCustomer()
     {
-      Console.WriteLine("\nPlease select your customer ID \n");
+      Console.Write("\nPlease select your customer ID: ");
       var customerSing = _customerSingleton.Customers;
       Output(customerSing);
       int input = int.Parse(Console.ReadLine());
@@ -119,15 +138,17 @@ namespace Project0.StoreApplication.Client
 
     static Store PickStore()
     {
+      Console.Clear();
       var storeSing = _storeSingleton.Stores;
       Output(storeSing);
-      Console.WriteLine("\nPlease select the location number\n");
+      Console.Write("\nPlease select the location number: ");
       int input = int.Parse(Console.ReadLine());
       return storeSing[input - 1];
     }
 
     static Product PickProduct()
     {
+      Console.Clear();
       var def = new DemoEF();
       int index = 0;
       foreach (var item in def.GetProducts())
@@ -135,7 +156,7 @@ namespace Project0.StoreApplication.Client
         Console.WriteLine("\n" + ++index + ". " + item.Name + ", Price: $" + item.Price);
       }
 
-      Console.WriteLine("\nPlease select a product number to purchase\n");
+      Console.Write("\nPlease select a product number to purchase: ");
       int input = int.Parse(Console.ReadLine());
       var product = def.GetProducts()[input - 1];
       return product;
