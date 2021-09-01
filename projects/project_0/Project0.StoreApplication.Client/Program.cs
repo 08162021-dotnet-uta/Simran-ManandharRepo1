@@ -44,14 +44,14 @@ namespace Project0.StoreApplication.Client
       {
         var currentStore = PickStore();
         var currentProduct = PickProduct();
-        Console.WriteLine("\nYou have selected " + currentProduct + "from " + currentStore + ".");
+        Console.WriteLine("\nYou have selected " + currentProduct + "from " + currentStore + ".\n");
         Console.WriteLine("\nPlease press y to confirm your purchase");
         var input = Console.ReadLine();
         if (input == "y")
         {
           _orderSingleton.AddToOrderRepo(currentStore, currentProduct);
         }
-        Console.WriteLine("\nYou have purshased the item!\n");
+        Console.WriteLine("\nCongratulations! You have purshased the item!\n");
         Console.WriteLine("Press y to goto Home or any other key to exit");
         string key = Console.ReadLine();
         keyOptions(key);
