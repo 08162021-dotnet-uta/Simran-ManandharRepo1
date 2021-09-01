@@ -18,4 +18,5 @@ namespace Project0.StoreApplication.Testing.DB
       Assert.NotNull(actual);
     }
   }
+
 }
