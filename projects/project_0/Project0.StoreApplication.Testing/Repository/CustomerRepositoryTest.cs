@@ -1,7 +1,7 @@
 using Xunit;
 using Project0.StoreApplication.Storage.Repositories;
 
-namespace Project0.CustomerApplication.Testing.Repository
+namespace Project0.StoreApplication.Testing.Repository
 {
   public class CustomerRepositoryTests
   {

@@ -1,5 +1,6 @@
 using Xunit;
 using Project0.StoreApplication.Storage.Repositories;
+using Project0.StoreApplication.Storage;
 
 namespace Project0.StoreApplication.Testing.Repository
 {
