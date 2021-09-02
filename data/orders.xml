@@ -16,60 +16,24 @@
     <OrderId>0</OrderId>
     <Store>
       <StoreId>0</StoreId>
+      <Location>Hoston, TX</Location>
+    </Store>
+    <Product>
+      <ProductId>4</ProductId>
+      <Name>Mac</Name>
+      <Price>1300.0000</Price>
+    </Product>
+  </Order>
+  <Order>
+    <OrderId>0</OrderId>
+    <Store>
+      <StoreId>0</StoreId>
       <Location>Austin, TX</Location>
     </Store>
     <Product>
-      <ProductId>0</ProductId>
-      <Name>Mac</Name>
-      <Price>1500</Price>
-    </Product>
-  </Order>
-  <Order>
-    <OrderId>0</OrderId>
-    <Store>
-      <StoreId>0</StoreId>
-      <Location>Hoston, TX</Location>
-    </Store>
-    <Product>
-      <ProductId>0</ProductId>
-      <Name>iPhoneX</Name>
-      <Price>1099</Price>
-    </Product>
-  </Order>
-  <Order>
-    <OrderId>0</OrderId>
-    <Store>
-      <StoreId>0</StoreId>
-      <Location>Hoston, TX</Location>
-    </Store>
-    <Product>
-      <ProductId>0</ProductId>
-      <Name>Mac</Name>
-      <Price>1500</Price>
-    </Product>
-  </Order>
-  <Order>
-    <OrderId>0</OrderId>
-    <Store>
-      <StoreId>0</StoreId>
-      <Location>Dallas, TX</Location>
-    </Store>
-    <Product>
-      <ProductId>0</ProductId>
-      <Name>ipad</Name>
-      <Price>399</Price>
-    </Product>
-  </Order>
-  <Order>
-    <OrderId>0</OrderId>
-    <Store>
-      <StoreId>0</StoreId>
-      <Location>Dallas, TX</Location>
-    </Store>
-    <Product>
-      <ProductId>0</ProductId>
-      <Name>ipad</Name>
-      <Price>399</Price>
+      <ProductId>5</ProductId>
+      <Name>iPhone X</Name>
+      <Price>799.0000</Price>
     </Product>
   </Order>
   <Order>
@@ -88,48 +52,12 @@
     <OrderId>0</OrderId>
     <Store>
       <StoreId>0</StoreId>
-      <Location>Dallas, TX</Location>
-    </Store>
-    <Product>
-      <ProductId>5</ProductId>
-      <Name>iPhone X</Name>
-      <Price>799.0000</Price>
-    </Product>
-  </Order>
-  <Order>
-    <OrderId>0</OrderId>
-    <Store>
-      <StoreId>0</StoreId>
-      <Location>Dallas, TX</Location>
+      <Location>Austin, TX</Location>
     </Store>
     <Product>
       <ProductId>6</ProductId>
       <Name>iWatch</Name>
       <Price>499.0000</Price>
-    </Product>
-  </Order>
-  <Order>
-    <OrderId>0</OrderId>
-    <Store>
-      <StoreId>0</StoreId>
-      <Location>Hoston, TX</Location>
-    </Store>
-    <Product>
-      <ProductId>5</ProductId>
-      <Name>iPhone X</Name>
-      <Price>799.0000</Price>
-    </Product>
-  </Order>
-  <Order>
-    <OrderId>0</OrderId>
-    <Store>
-      <StoreId>0</StoreId>
-      <Location>Dallas, TX</Location>
-    </Store>
-    <Product>
-      <ProductId>3</ProductId>
-      <Name>iPad</Name>
-      <Price>399.0000</Price>
     </Product>
   </Order>
 </ArrayOfOrder>

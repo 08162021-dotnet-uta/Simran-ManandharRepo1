@@ -53,6 +53,7 @@ namespace Project0.StoreApplication.Client
         if (input == "y")
         {
           Console.Clear();
+          Log.Information("Product Order Confirmed");
           _orderSingleton.AddToOrderRepo(currentStore, currentProduct);
         }
         else
