@@ -52,7 +52,7 @@ namespace _11_ArraysAndListsChallenge
     /// <returns></returns>
     public static decimal ArrayListAvg(ArrayList myArrayList)
     {
-      decimal total = 0;
+      double total = 0;
       int len = myArrayList.Count;
       // throw new NotImplementedException("ArrayListAvg has not been implemented yet.");
       for (int i = 0; i < myArrayList.Count; i++)
@@ -64,11 +64,16 @@ namespace _11_ArraysAndListsChallenge
         }
         else
         {
-          total += myArrayList[i];
+          if (myArrayList[i] is int)
+            total = total + (int)myArrayList[i];
+          else
+            total = total + (double)myArrayList[i];
         }
       }
-      decimal avg = total / len;
-      return Math.Round(avg, 3);
+      decimal avg = (decimal)(total / len);
+      avg = Decimal.Round(avg, 3);
+      return avg;
+
     }
 
     /// <summary>
@@ -78,7 +83,18 @@ namespace _11_ArraysAndListsChallenge
     /// <param name="myArray1"></param>
     public static int ListAscendingOrder(List<int> scores, int yourScore)
     {
-      throw new NotImplementedException("ListAscendingOrder has not been implemented yet.");
+      // throw new NotImplementedException("ListAscendingOrder has not been implemented yet.");
+      int place = 1;
+      foreach (int item in scores)
+      {
+        if (item < yourScore)
+        {
+          place++;
+        }
+
+      }
+      return place;
+
     }
 
     /// <summary>
@@ -90,7 +106,17 @@ namespace _11_ArraysAndListsChallenge
     /// <returns></returns>
     public static bool FindStringInList(List<string> myArray2, string word)
     {
-      throw new NotImplementedException("FindStringInList has not been implemented yet.");
+      // throw new NotImplementedException("FindStringInList has not been implemented yet.");
+      if (myArray2.Contains(word))
+      {
+        return true;
+      }
+      else
+      {
+        return false;
+      }
+
+      //return (myArray2.Contains(word))
     }
   }//EoP
 }// EoN
