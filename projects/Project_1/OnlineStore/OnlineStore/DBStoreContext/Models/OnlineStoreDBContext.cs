@@ -103,6 +103,11 @@ namespace DBStoreContext.Models
                   .IsRequired()
                   .HasMaxLength(50)
                   .IsUnicode(false);
+
+        entity.Property(e => e.Picture)
+                  .IsRequired()
+                  .HasMaxLength(8000)
+                  .IsUnicode(false);
       });
 
       OnModelCreatingPartial(modelBuilder);

@@ -5,16 +5,18 @@ using System.Collections.Generic;
 
 namespace ModelsLayer.EFModels
 {
-    public partial class Store
+  public partial class Store
+  {
+    public Store()
     {
-        public Store()
-        {
-            Products = new HashSet<Product>();
-        }
-
-        public int StoreId { get; set; }
-        public string Name { get; set; }
-
-        public virtual ICollection<Product> Products { get; set; }
+      Products = new HashSet<Product>();
     }
+
+    public int StoreId { get; set; }
+    public string Name { get; set; }
+
+    public string Picture { get; set; }
+
+    public virtual ICollection<Product> Products { get; set; }
+  }
 }
