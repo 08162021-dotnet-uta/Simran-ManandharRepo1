@@ -31,9 +31,7 @@ namespace OnlineStoreUi
          
             services.AddControllers();
 
-            services.AddDbContext<OnlineStoreDBContext>(opt =>
-                                               opt.UseSqlServer(Configuration.GetConnectionString("OnlineStoreDB")));
-
+            services.AddDbContext<OnlineStoreDBContext>();
             //services.AddSwaggerGen(c =>
             //{
             //    c.SwaggerDoc("v1", new OpenApiInfo { Title = "OnlineStoreUi", Version = "v1" });
