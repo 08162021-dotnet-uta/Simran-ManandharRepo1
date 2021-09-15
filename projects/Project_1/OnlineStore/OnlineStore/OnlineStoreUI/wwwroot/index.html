@@ -6,10 +6,19 @@
     <link rel="stylesheet" href="css/site.css" />
 </head>
 <body>
+    <h1 class=" welcome-text">Welcome to my Online Store!</h1>
+
+    <form id="login-form">
+        <input type="text" placeholder="Enter your name" name="name" class="input-text" value=""><br>
+        <input type="text" placeholder="Enter your email address" name="email" class="input-text" value=""><br>
+        <input type="submit" value="Login" class="login"> <br />
+        <input type="submit" value="Register" class="register">
+    </form>
 
     <div class="products">
 
     </div>
+    <script src="js/login-or-register.js" type="text/javascript"></script>
     <script src="js/site.js" type="text/javascript"></script>
     <script type="text/javascript">getItems();</script>
     <script type="text/javascript">getProducts();</script>

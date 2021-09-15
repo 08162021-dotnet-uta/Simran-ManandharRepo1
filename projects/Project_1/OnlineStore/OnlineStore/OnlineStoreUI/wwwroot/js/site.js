@@ -1,5 +1,4 @@
-﻿const uri = 'api/Customer';
-let todos = [];
+﻿const uri = 'api/customer';
 const productList = document.querySelector("div")
 
 function getItems() {
@@ -18,7 +17,6 @@ function getProducts() {
                 productList.innerHTML += `
               <article class = "product">
                     <img src="${e.picture}" alt="product" class="product-img">
-                </div>
                 <h3>${e.name}</h3>
                 <h4>$${e.price}</h4>
             </article>
@@ -28,6 +26,10 @@ function getProducts() {
           
         })
 }
+
+
+
+
 
 
 function addItem() {
