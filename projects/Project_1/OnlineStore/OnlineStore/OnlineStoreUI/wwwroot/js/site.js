@@ -1,5 +1,5 @@
 ﻿const uri = 'api/customer';
-const productList = document.querySelector("div")
+const productList = document.querySelector(".products")
 
 function getItems() {
     fetch(uri)

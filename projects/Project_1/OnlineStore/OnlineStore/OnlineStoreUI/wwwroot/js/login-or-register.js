@@ -1,8 +1,9 @@
-const uri = 'api/customer'
+const url = 'api/customer';
 const form = document.getElementById("login-form")
 const inputFields = document.querySelectorAll(".input-text")
 const loginCustomer = document.querySelector(".login")
 const registerCustomer = document.querySelector(".register")
+const displayCustomer = document.querySelector(".welcomeCustomer")
 
 
 form.addEventListener('submit', (e)=>{
@@ -20,8 +21,14 @@ form.addEventListener('submit', (e)=>{
             Email: inputFields[1].value
         })
     })
+      .then(data => {
+        sessionStorage.setItem('customerId', data)
+        displayName(inputFields[0].value);
+        selectStore();
+      }  
+    )
   } else {
-        fetch(`${uri}/${inputFields[0].value}&${inputFields[1].value}`)
+        fetch(`${url}/${inputFields[0].value}&${inputFields[1].value}`)
           .then(res => {
             if (!res.ok) {
               console.log("Enable to login")
@@ -31,10 +38,16 @@ form.addEventListener('submit', (e)=>{
           })
             .then(data => {
               console.log(data)
-              sessionStorage.setItem('customerId', JSON.stringify(data))
+              sessionStorage.setItem('customerId', data)
+              displayName(inputFields[0].value);
+              selectStore();
             })
           .catch(err => {
         console.log(`The error was ${err}`)
       })
     }
 })
+
+displayName = (name) => {
+  displayCustomer.innerHTML = `<h1>Welcome ${name.toUpperCase()}! Let's get started...</h1>`
+}
