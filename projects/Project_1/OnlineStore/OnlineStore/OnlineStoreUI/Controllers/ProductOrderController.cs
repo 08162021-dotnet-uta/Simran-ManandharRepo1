@@ -9,18 +9,17 @@ using ModelsLayer.EFModels;
 
 namespace OnlineStoreUi.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class ProductOrderController : ControllerBase
+  [Route("api/[controller]")]
+  [ApiController]
+  public class ProductOrderController : ControllerBase
+  {
+    [HttpGet]
+    public IEnumerable<ProductOrder> Get()
     {
-        [HttpGet]
-        public IEnumerable<ProductOrder> Get()
-        {
-            using (OnlineStoreDBContext entities = new OnlineStoreDBContext())
-            {
-                return entities.ProductOrders.ToList();
-            }
-        }
-
+      using (OnlineStoreDBContext entities = new OnlineStoreDBContext())
+      {
+        return entities.ProductOrders.ToList();
+      }
     }
+  }
 }

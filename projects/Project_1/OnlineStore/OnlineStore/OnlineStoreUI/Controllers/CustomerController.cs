@@ -99,12 +99,10 @@ namespace OnlineStoreUi.Controllers
     [HttpPost]
     public async Task<ActionResult<Customer>> PostCustomer(Customer customer)
     {
-      // _context.Customers.Add(customer);
       _context.Database.ExecuteSqlRaw($"insert into Customers (Name,Email) values ('{customer.Name}','{customer.Email}')");
       await _context.SaveChangesAsync();
 
-      //return CreatedAtAction("GetCustomer", new { id = customer.Id }, customer);
-      return CreatedAtAction(nameof(GetCustomer), new { id = customer.CustomerId }, customer);
+      return Created($"~customer/{customer.CustomerId}", customer);
     }
 
     // DELETE: api/Customers/5

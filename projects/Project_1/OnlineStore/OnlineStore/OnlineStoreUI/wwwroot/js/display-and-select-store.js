@@ -28,11 +28,10 @@ function ClickStore(event) {
                 productList.innerHTML += `
               <article class = "product">
                     <img src="${e.picture}" alt="product" class="product-img">
-                <h3>${e.name} - $${e.price} <span onClick=AddToCart(event)>Add to cart</span></h3>
+                <h3>${e.name} - $${e.price} <span data-id="${e.productId}" onClick=AddToCart(event)>Add to cart</span></h3>
                 <h2></h2>
             </article>
             `
           }) 
         })
 }
-
