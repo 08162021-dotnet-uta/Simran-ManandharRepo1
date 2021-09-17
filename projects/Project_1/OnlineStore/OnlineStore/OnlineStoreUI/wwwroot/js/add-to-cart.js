@@ -11,9 +11,9 @@ function AddToCart(e) {
   let customerId = parseInt(sessionStorage.getItem('customerId'));
   let selectedProductId = parseInt(e.target.dataset.id)
   // productIdArray.push(selectedproductId)
-  let productName = e.path[1].childNodes[1].childNodes[0].innerText
-  let productPrice = parseInt(e.path[1].childNodes[1].childNodes[2].innerText)
-  let quantity = parseInt(e.path[1].childNodes[3].value)
+  let productName = e.path[1].childNodes[3].childNodes[0].innerText
+  let productPrice = parseInt(e.path[1].childNodes[3].childNodes[2].innerText)
+  let quantity = parseInt(e.path[1].childNodes[5].value)
 
   sessionStorage.setItem('productId', selectedProductId)
   sessionStorage.setItem('ProductName', productName)
@@ -35,10 +35,10 @@ function AddToCart(e) {
       console.log(data)
       // debugger
       sessionStorage.setItem('orderId', data.orderId)
-      totalPrice += productPrice;
+      totalPrice += (productPrice * quantity);
       cartBlock.style.display="block"
       cartItems.innerHTML += `
-        <h4>${productName} - $${productPrice} X ${quantity}</h4> 
+        <h4>${productName} - $${productPrice} x ${quantity}</h4> 
       `
       totalBlock.style.display="block"
       priceBlock.innerHTML = `$${totalPrice}
@@ -82,9 +82,14 @@ function Checkout(e) {
       console.log(data)
       // debugger
       window.alert("Congratulations. Your order has been submitted!\nEstimated delivery: 24 hours");
-
-  })
-
+      document.getElementById("cart-container").style.display = "none"
+    })
 }
+
+function Logout() {
+  window.location.reload(false);
+}
+
+
 
 

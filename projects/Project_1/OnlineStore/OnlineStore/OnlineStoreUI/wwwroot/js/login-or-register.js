@@ -5,13 +5,14 @@ const inputFields = document.querySelectorAll(".input-text")
 const loginCustomer = document.querySelector(".login")
 const registerCustomer = document.querySelector(".register")
 const displayCustomer = document.querySelector(".welcomeCustomer")
+const logoutBtn = document.getElementById("logout-btn")
 
 
 form.addEventListener('submit', (e) => {
   e.preventDefault()
   form.style.display = "none"
   if (e.submitter.value === "Register") {
-    fetch(uri, {
+    fetch(url, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -35,6 +36,7 @@ form.addEventListener('submit', (e) => {
     .then(data => {
       console.log(data)
       sessionStorage.setItem('customerId', data)
+      logoutBtn.style.display="block"
       displayName(inputFields[0].value);
       selectStore();
     })
