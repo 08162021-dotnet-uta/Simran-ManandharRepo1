@@ -60,8 +60,21 @@ namespace OnlineStoreUi.Controllers
       return Created($"~order/{c1.OrderId}", c1);
     }
 
+    [HttpGet("{selectorderId}")]
+    public async Task<ActionResult<ViewModelOrder>> GetOrderList(int selectorderId)
+    {
+      //  if (!ModelState.IsValid) return BadRequest();
 
+      ViewModelOrder o = new ViewModelOrder() { OrderId = selectorderId };
+      //send fname and lname into a method of the business layer to check the Db fo that guy/gal;
+      List<ViewModelOrder> o1 = await _orderRepo.OrdersListAsync(o);
+      if (o1 == null)
+      {
+        return NotFound();
+      }
 
+      return Ok(o1);
+    }
 
   }
 }

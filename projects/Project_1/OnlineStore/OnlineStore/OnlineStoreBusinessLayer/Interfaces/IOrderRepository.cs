@@ -13,5 +13,7 @@ namespace OnlineStoreBusinessLayer.Interfaces
 
     Task<ViewModelOrder> RegisterOrdersAsync(ViewModelOrder vmc);
 
+    Task<List<ViewModelOrder>> OrdersListAsync(ViewModelOrder vmc);
+
   }
 }

@@ -38,14 +38,15 @@ function AddToCart(e) {
       totalPrice += productPrice;
       cartBlock.style.display="block"
       cartItems.innerHTML += `
-        <h4>${productName} - $${productPrice} X ${quantity}</h4> // work here for price adding stuff
+        <h4>${productName} - $${productPrice} X ${quantity}</h4> 
       `
       totalBlock.style.display="block"
       priceBlock.innerHTML = `$${totalPrice}
+      <button onClick=Checkout(event) id="cart-checkout">Checkout</div>
       `
       let selectProductId = parseInt(sessionStorage.getItem('productId'));
       let selectorderId = parseInt(sessionStorage.getItem('orderId'));
-      FetchOrderProduct(selectProductId,selectorderId,quantity)
+      FetchOrderProduct(selectProductId, selectorderId, quantity)
     })// need to reset this???
   //     sessionStorage.setItem('orderId', data)
 
@@ -65,14 +66,25 @@ function AddToCart(e) {
         Quantity: quantity
       })
     })
-    .then(res => res.json())
-        .then(data => {
-          console.log(data)
-          // debugger
+      .then(res => res.json())
+      .then(data => {
+        console.log(data)
+        // debugger
       })
-    
-  }
-
-      
+  }   
 }
+
+function Checkout(e) {
+  let selectorderId = parseInt(sessionStorage.getItem('orderId'));
+  fetch(`${orderUrl}/${selectorderId}`)
+    .then(res => res.json())
+    .then(data => {
+      console.log(data)
+      // debugger
+      window.alert("Congratulations. Your order has been submitted!\nEstimated delivery: 24 hours");
+
+  })
+
+}
+
 

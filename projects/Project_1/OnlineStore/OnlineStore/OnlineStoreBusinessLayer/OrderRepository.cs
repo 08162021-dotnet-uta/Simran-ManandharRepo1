@@ -50,5 +50,17 @@ namespace OnlineStoreBusinessLayer
 
       return await OrdersAsync(vmc);
     }
+
+    public async Task<List<ViewModelOrder>> OrdersListAsync(ViewModelOrder vmc)
+    {
+      List<Order> orders = await _context.Orders.FromSqlRaw<Order>("Select * FROM Orders where OrderId = {0}", vmc.OrderId).ToListAsync();
+      List<ViewModelOrder> vmc1 = new List<ViewModelOrder>();
+      foreach (Order o in orders)
+      {
+        vmc1.Add(ModelMapper.OrderToViewModelOrder(o));
+      }
+      return vmc1;
+    }
   }
 }
+
