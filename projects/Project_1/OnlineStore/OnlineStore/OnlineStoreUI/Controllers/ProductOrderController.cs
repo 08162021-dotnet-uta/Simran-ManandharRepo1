@@ -38,11 +38,11 @@ namespace OnlineStoreUi.Controllers
     [HttpPost]
     public async Task<ActionResult<ProductOrder>> PostProductOrder(ProductOrder productorder)
     {
-      _context.Database.ExecuteSqlRaw($"insert into ProductOrders (ProductId, OrderId) values ('{productorder.ProductId}' ,'{productorder.OrderId}' )");
+      _context.Database.ExecuteSqlRaw($"insert into ProductOrder (ProductId, OrderId, Quantity) values ('{productorder.ProductId}' ,'{productorder.OrderId}', '{productorder.Quantity}')");
       await _context.SaveChangesAsync();
 
-      // return Created($"~order/{order.CustomerId}", order);
-      return CreatedAtAction(nameof(GetProductOrder), new { id = productorder.ProductOrderId }, productorder);
+      return Created($"~productorder/{productorder.ProductOrderId}", productorder);
+      // return CreatedAtAction(nameof(GetProductOrder), new { id = productorder.ProductOrderId }, productorder);
     }
 
     private bool ProductOrderExists(int id)

@@ -26,9 +26,10 @@ function ClickStore(event) {
         .then(json => {
             json.forEach(e => {
                 productList.innerHTML += `
-              <div class = "product" data-set="${e.productId}" onClick=AddToCart(event)>  
+              <div class = "product">  
                 <h3><span class="name">${e.name}</span> - $<span class="price">${e.price}</span></h3>
-                <button>Add To Cart</button>
+                <input type="number" id="quantity" name="quantity" min="1" max="5" step="1" value="1">
+                <button onClick=AddToCart(event) data-id="${e.productId}">Add To Cart</button>
             </div>
             `
           }) 
