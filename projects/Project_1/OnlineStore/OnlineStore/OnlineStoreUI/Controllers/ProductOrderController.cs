@@ -6,6 +6,8 @@ using DBStoreContext.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ModelsLayer.EFModels;
+using Microsoft.EntityFrameworkCore;
+
 
 namespace OnlineStoreUi.Controllers
 {
@@ -13,13 +15,40 @@ namespace OnlineStoreUi.Controllers
   [ApiController]
   public class ProductOrderController : ControllerBase
   {
-    [HttpGet]
-    public IEnumerable<ProductOrder> Get()
+
+    private readonly OnlineStoreDBContext _context;
+
+    public ProductOrderController(OnlineStoreDBContext context)
     {
-      using (OnlineStoreDBContext entities = new OnlineStoreDBContext())
-      {
-        return entities.ProductOrders.ToList();
-      }
+      _context = context;
     }
+    [HttpGet("{id}")]
+    public async Task<ActionResult<ProductOrder>> GetProductOrder(int id)
+    {
+      var productorder = await _context.ProductOrders.FindAsync(id);
+
+      if (productorder == null)
+      {
+        return NotFound();
+      }
+
+      return productorder;
+    }
+
+    [HttpPost]
+    public async Task<ActionResult<ProductOrder>> PostProductOrder(ProductOrder productorder)
+    {
+      _context.Database.ExecuteSqlRaw($"insert into ProductOrders (ProductId, OrderId) values ('{productorder.ProductId}' ,'{productorder.OrderId}' )");
+      await _context.SaveChangesAsync();
+
+      // return Created($"~order/{order.CustomerId}", order);
+      return CreatedAtAction(nameof(GetProductOrder), new { id = productorder.ProductOrderId }, productorder);
+    }
+
+    private bool ProductOrderExists(int id)
+    {
+      return _context.ProductOrders.Any(e => e.OrderId == id);
+    }
+
   }
 }

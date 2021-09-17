@@ -7,6 +7,11 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ModelsLayer.EFModels;
 using Microsoft.EntityFrameworkCore;
+using OnlineStoreBusinessLayer.Interfaces;
+using OnlineStoreUi;
+using ModelsLayer.Models;
+using Microsoft.Extensions.Logging;
+
 
 namespace OnlineStoreUi.Controllers
 {
@@ -15,75 +20,48 @@ namespace OnlineStoreUi.Controllers
   public class OrderController : ControllerBase
   {
 
-    private readonly OnlineStoreDBContext _context;
+    private readonly IOrderRepository _orderRepo;
+    private readonly ILogger<OrderController> _logger;
 
-    public OrderController(OnlineStoreDBContext context)
+    public OrderController(IOrderRepository cr, ILogger<OrderController> logger)
     {
-      _context = context;
-    }
-
-    [HttpGet]
-    public async Task<ActionResult<IEnumerable<Order>>> GetOrders()
-    {
-      return await _context.Orders.ToListAsync();
-    }
-
-    [HttpGet("{id}")]
-    public async Task<ActionResult<Order>> GetOrder(int id)
-    {
-      var order = await _context.Orders.FindAsync(id);
-
-      if (order == null)
-      {
-        return NotFound();
-      }
-
-      return order;
-    }
-
-    [HttpPut("{id}")]
-    public async Task<IActionResult> PutOrder(int id, Order order)
-    {
-      if (id != order.OrderId)
-      {
-        return BadRequest();
-      }
-
-      _context.Entry(order).State = EntityState.Modified;
-
-      try
-      {
-        await _context.SaveChangesAsync();
-      }
-      catch (DbUpdateConcurrencyException)
-      {
-        if (!OrderExists(id))
-        {
-          return NotFound();
-        }
-        else
-        {
-          throw;
-        }
-      }
-
-      return NoContent();
+      _orderRepo = cr;
+      _logger = logger;
     }
 
 
     [HttpPost]
-    public async Task<ActionResult<Order>> PostOrder(Order order)
-    {
-      _context.Database.ExecuteSqlRaw($"insert into Orders (CustomerId) values ('{order.CustomerId}')");
-      await _context.SaveChangesAsync();
+    // public async Task<ActionResult<Order>> PostOrder(Order order)
+    // {
+    //   _context.Orders.Add(order);
+    //   await _context.SaveChangesAsync();
 
-      return Created($"~order/{order.OrderId}", order);
+    //   return CreatedAtAction("GetOrder", new { id = order.OrderId }, order);
+    // }
+
+    public async Task<ActionResult<ViewModelOrder>> Create(ViewModelOrder c)
+    {
+      // _context.Orders.Add(order);
+      // await _context.SaveChangesAsync();
+
+      // // return Created($"~order/{order.CustomerId}", order);
+      // return CreatedAtAction("GetOrder", new { id = order.OrderId }, order);
+
+      if (!ModelState.IsValid) return BadRequest();
+
+      //ViewModelCustomer c = new ViewModelCustomer() { Fname = fname, Lname = lname };
+      //send fname and lname into a method of the business layer to check the Db fo that guy/gal;
+      ViewModelOrder c1 = await _orderRepo.RegisterOrdersAsync(c);
+      if (c1 == null)
+      {
+        return NotFound();
+      }
+
+      return Created($"~order/{c1.OrderId}", c1);
     }
 
-    private bool OrderExists(int id)
-    {
-      return _context.Orders.Any(e => e.OrderId == id);
-    }
+
+
 
   }
 }

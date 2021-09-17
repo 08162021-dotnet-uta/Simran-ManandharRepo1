@@ -11,7 +11,7 @@ function selectStore() {
       json.forEach(e => {
         store.innerHTML += `
               <article class = "store">
-                <img onClick=ClickStore(event) data-id="${e.storeId}" src="${e.picture}" alt="store" class="store-img">
+              <h3><span onClick=ClickStore(event) data-id="${e.storeId}">${e.name}</span></h3>
               </article>
             `
       })
@@ -26,12 +26,14 @@ function ClickStore(event) {
         .then(json => {
             json.forEach(e => {
                 productList.innerHTML += `
-              <article class = "product">
-                    <img src="${e.picture}" alt="product" class="product-img">
-                <h3>${e.name} - $${e.price} <span data-id="${e.productId}" onClick=AddToCart(event)>Add to cart</span></h3>
-                <h2></h2>
-            </article>
+              <div class = "product" data-set="${e.productId}" onClick=AddToCart(event)>  
+                <h3><span class="name">${e.name}</span> - $<span class="price">${e.price}</span></h3>
+                <button>Add To Cart</button>
+            </div>
             `
           }) 
         })
 }
+
+// <img src="${e.picture}" alt="product" class="product-img">
+//<img onClick=ClickStore(event) data-id="${e.storeId}" src="${e.picture}" alt="store" class="store-img">
