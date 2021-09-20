@@ -19,4 +19,11 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\DBStoreContext\DBStoreContext.csproj" />
+    <ProjectReference Include="..\ModelsLayer\ModelsLayer.csproj" />
+    <ProjectReference Include="..\OnlineStore\OnlineStore.csproj" />
+    <ProjectReference Include="..\OnlineStoreBusinessLayer\OnlineStoreBusinessLayer.csproj" />
+    <ProjectReference Include="..\OnlineStoreUi\OnlineStoreUi.csproj" />
+  </ItemGroup>
 </Project>

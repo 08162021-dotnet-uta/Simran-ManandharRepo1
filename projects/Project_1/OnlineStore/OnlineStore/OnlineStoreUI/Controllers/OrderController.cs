@@ -56,7 +56,6 @@ namespace OnlineStoreUi.Controllers
       {
         return NotFound();
       }
-
       return Created($"~order/{c1.OrderId}", c1);
     }
 

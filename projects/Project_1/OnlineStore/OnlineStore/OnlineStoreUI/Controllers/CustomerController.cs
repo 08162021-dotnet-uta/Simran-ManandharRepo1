@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using ModelsLayer.EFModels;
 using DBStoreContext.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 
 namespace OnlineStoreUi.Controllers
 {
@@ -16,10 +17,23 @@ namespace OnlineStoreUi.Controllers
   {
     private readonly OnlineStoreDBContext _context;
 
-    public CustomerController(OnlineStoreDBContext context)
+    private readonly ILogger<CustomerController> _logger;
+
+    public CustomerController(OnlineStoreDBContext context, ILogger<CustomerController> logger)
     {
       _context = context;
+      _logger = logger;
     }
+
+    //    public CustomerController(ILogger<CustomerController> logger)
+    //    {
+    //        _logger = logger;
+    //    }
+
+    //    public CustomerController(OnlineStoreDBContext context)
+    //{
+    //  _context = context;
+    //}
 
     // GET: api/Customer
     [HttpGet]
@@ -54,10 +68,11 @@ namespace OnlineStoreUi.Controllers
     [HttpGet("{name}&{email}")]
     public async Task<ActionResult<int>> CustomerLogin(string name, string email)
     {
-
       if (!ModelState.IsValid) return BadRequest();
 
       var customer = await _context.Customers.FromSqlRaw<Customer>($"select * from Customers where Name = '{name}' and Email = '{email}'").ToListAsync();
+
+      _logger.LogInformation($"{customer[0].Name} LoggedIn");
 
       if (customer.Count == 1) return customer[0].CustomerId;
       else return NotFound();
@@ -101,6 +116,7 @@ namespace OnlineStoreUi.Controllers
     {
       _context.Database.ExecuteSqlRaw($"insert into Customers (Name,Email) values ('{customer.Name}','{customer.Email}')");
       await _context.SaveChangesAsync();
+      _logger.LogInformation($"{customer.Name} Registered New User");
 
       return Created($"~customer/{customer.CustomerId}", customer);
     }
