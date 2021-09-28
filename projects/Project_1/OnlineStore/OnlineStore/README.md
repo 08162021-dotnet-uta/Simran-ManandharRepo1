@@ -44,7 +44,7 @@ OnlineStore.sln
 * Run
 
 ## Usage
-After the program runs, a login/register page will open on browser. After logging in or regitering, the user is navigated to the stores page where a list of stores show up. The product list will appear when a store is clicked. User can click add to cart on the products with the quantity specified which shows up on the cart. User can checkout and an alert box appears where it says "You have successfully purchased". After the checkout is done, user can make another purchase or logout.
+After the program runs, a login/register page will open on browser. After logging in or registering, the user is navigated to the stores page where a list of stores show up. The product list will appear when a store is clicked. User can click add to cart on the products with the quantity specified which shows up on the cart. User can checkout and an alert box appears where it says "You have successfully purchased". After the checkout is done, user can make another purchase or logout.
 
 ## License
 This project uses the following license: [MIT License](https://github.com/08162021-dotnet-uta/SimranManandharRepo1/blob/main/LICENSE).
