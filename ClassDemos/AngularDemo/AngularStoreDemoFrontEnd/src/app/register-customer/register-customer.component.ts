@@ -15,6 +15,7 @@ export class RegisterCustomerComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    // this.registertrue = true;
   }
 
   registercustomer():void {

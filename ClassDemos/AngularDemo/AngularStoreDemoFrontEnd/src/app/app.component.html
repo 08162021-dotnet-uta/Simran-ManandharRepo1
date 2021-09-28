@@ -2,8 +2,15 @@
 
 <input type="text" placeholder="type something" [(ngModel)]="something">
 <h1>{{something}}</h1>
-<button (click)="logincustomer()">Click me to Login</button> | 
-<button (click)="registercustomer()">Click me to Register</button>
+<!-- <button (click)="logincustomer()">Click me to Login</button> | 
+<button (click)="registercustomer()">Click me to Register</button> -->
 
-<app-register-customer [registertrue]="registertrue" (passNewCustomerToParent)="registernewcustomer($event)"></app-register-customer>
-<app-login-customer [logintrue]="logintrue"></app-login-customer>
+
+  <button (click)="logincustomer()" routerLink="/login">Login</button>
+  <button (click)="registercustomer()" routerLink="/register">Register</button>
+
+<router-outlet></router-outlet>
+
+
+<!-- <app-register-customer [registertrue]="registertrue" (passNewCustomerToParent)="registernewcustomer($event)"></app-register-customer>
+<app-login-customer [logintrue]="logintrue"></app-login-customer> -->
